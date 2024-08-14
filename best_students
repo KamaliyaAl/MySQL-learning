@@ -1,0 +1,9 @@
+best_of_department = "SELECT name, department_name
+FROM Students s 
+RIGHT JOIN Student_Subject ss
+ON s.student_id = ss.student_id
+LEFT JOIN Department d
+ON s.department_id = d.department_id
+GROUP BY ss.student_id
+HAVING AVG(ss.result) > 4.5
+ORDER BY name;"
